@@ -107,18 +107,28 @@
 		//3.滚动到底部，===》1
 		var curPage = 0;
 		var perPageCount = 9;
+		var lock;
 
 		getData(manageData);
 
 		waterfull_layout.init($('.pic-ct'), $('.hide'));
 
 		$(window).on('scroll', function(){
-			var $load = $('.load');
-			var isTrue = checkShow($load);
-
-			if (isTrue){
-				getData(manageData);
+			//滚动过程中，不断复原定时器，等到滚动结束，才加载图片(可防止出现重复加载的情况)
+			if (lock){
+				clearTimeout(lock);
 			}
+
+			lock = setTimeout(function(){
+				var $load = $('.load');
+				var isTrue = lazyLoad.checkShow($load);
+
+				if (isTrue){
+					getData(manageData);
+				}
+			}, 300)
+
+			
 		})
 
 		$(window).resize(function(){
@@ -135,7 +145,8 @@
 		}
 
 		function manageData(newsData){
-			console.log('manageData-----------');
+			// console.log('manageData-----------');
+
 			// console.log(newsData);
 			//一条数据一条 数据的处理
 			$.each(newsData, function(index, news){
@@ -146,7 +157,6 @@
 					waterfull_layout.waterfull($node);
 				})
 			})
-			
 		}
 		// function creatNode(data){
 		// 	console.log(data.length);
@@ -189,7 +199,7 @@
 				}
 			}).done(function(ret){
 				if(ret && ret.status && ret.status.code === "0"){
-					console.log('get  data success----');
+					// console.log('get  data success----');
 					callback(ret.data);   //如果数据没问题，那么生成节点并摆放好位置
 					curPage++;
 				}else{

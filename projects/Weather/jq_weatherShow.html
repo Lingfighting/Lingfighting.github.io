@@ -18,7 +18,7 @@
 		//cors
 		$('button').on('click', function(){
 			$city = $('input').val();
-			console.log($city);
+			// console.log($city);
 			$.ajax({
 				url:  'http://api.jirengu.com/weather.php',
 				type: 'get',
@@ -30,10 +30,10 @@
 		})
 
 		function showWeather(ret){
-			console.log(ret);
+			// console.log(ret);
 			var a = JSON.parse(ret);
-			console.log(a);
-			console.log(a.results[0]);
+			// console.log(a);
+			// console.log(a.results[0]);
     		var html = '';
     		html += '<h2>你的城市：'+ a.results[0].currentCity + '</h2>';
     		html += '<h4>最近几日天气：</h4>';

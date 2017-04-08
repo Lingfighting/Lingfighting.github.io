@@ -6,7 +6,7 @@ var waterfull_layout = (function(){
 
 
 	function init($parentNode, $node){
-		console.log('init------------');
+		// console.log('init------------');
 		//记录父容器$itemCt,用于后面设置父容器的高度
 		$itemCt = $parentNode;
 		var collength = parseInt($itemCt.outerWidth(true)/$node.outerWidth(true));
@@ -18,7 +18,7 @@ var waterfull_layout = (function(){
 
 	function waterfull($item){
 		
-		console.log('waterfull------------');
+		// console.log('waterfull------------');
 
 		var minValue = Math.min.apply(null, itemArr);
 
@@ -37,5 +37,5 @@ var waterfull_layout = (function(){
 	return {
 		init: init,
 		waterfull: waterfull,
-	}
+	};
 })();

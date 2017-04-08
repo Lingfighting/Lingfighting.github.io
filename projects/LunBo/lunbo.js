@@ -22,7 +22,7 @@ define(['jquery'], function(jquery){
 		this.imgLeft = 0;
 		this.lock = false;
 
-	};
+	}
 
 	lunBo.prototype = {
 
@@ -115,15 +115,14 @@ define(['jquery'], function(jquery){
 				this.play0(this.imgLeft);
 			}, 1000);
 		},
-		
 
-	}
+	};
 
 
 	return	{
 		playLunBo:playLunBo,
-	}
+	};
 
-})
+});
 
 

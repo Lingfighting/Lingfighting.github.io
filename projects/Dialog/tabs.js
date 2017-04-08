@@ -44,6 +44,7 @@ var Tabs = (function(){
 	
 	return {
 		creat: creat,
-	}
+	};
+	
 })();
 
