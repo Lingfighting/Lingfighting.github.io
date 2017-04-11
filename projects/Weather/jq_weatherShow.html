@@ -4,12 +4,19 @@
 	<meta charset="UTF-8">
 	<title>天气查询</title>
 	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<style>
+		.ct span{
+			opacity: 0.5;
+			margin-left: 10px;
+		}
+	</style>
 </head>
 <body>
 	<div class="ct">
 		<!-- <form action="http://api.jirengu.com/weather.php"> -->
 		<input type="text" placeholder="成都" value='成都'>
 		<button>获取天气</button>
+		<span>注：后台使用百度的接口，每天有访问限额，超过百度的限额服务会挂掉</span>
 		<!-- </form> -->
 		<div class="show"></div>
 	</div>
