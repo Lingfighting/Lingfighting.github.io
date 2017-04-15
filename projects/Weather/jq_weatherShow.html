@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>天气查询</title>
-	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<style>
 		.ct span{
 			opacity: 0.5;
@@ -52,7 +52,7 @@
     		html += '<h4>旅游指数：</h4><p>' + a.results[0].index[2].des + '</p>';
     		html += '<h4>感冒指数：</h4><p>' + a.results[0].index[3].des + '</p>';
     		html += '<h4>运动指数：</h4><p>' + a.results[0].index[4].des + '</p>';
-    		html += '<h4>紫外线强度：</h4><p>' + a.results[0].index[5].des + '</p>';
+    		// html += '<h4>紫外线强度：</h4><p>' + a.results[0].index[5].des + '</p>';
     		$('.show').html(html);
     		// var obj = $(html);
     		// obj.appendTo('.show');
